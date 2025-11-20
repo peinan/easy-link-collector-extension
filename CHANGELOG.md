@@ -1,0 +1,56 @@
+# Changelog
+
+All notable changes to this project will be documented in this file.
+
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
+and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
+## [1.2.1] - 2025-11-21
+
+### Fixed
+- **URL Wrapping**: Fixed a bug where long URLs would not wrap within the text field. The URL items were changed from `<input>` to `<textarea>` elements, which now automatically resize to fit their content, ensuring full visibility of long URLs.
+
+### Changed
+- **Icons**: Replaced the programmatically generated extension icons with the user-provided icon files for a more refined look.
+
+## [1.2.0] - 2025-11-21
+
+### Added
+- **Trash Icon for Clear All**: The "Clear All" button is now a trash can icon from Lucide Icons, improving UI clarity.
+
+### Changed
+- **UI Language**: All UI components, labels, and notifications have been converted to English for broader accessibility.
+- **Button Disabling Logic**: The "Complete" button is now disabled if no export format (e.g., Clipboard, CSV, JSON) is selected, preventing empty actions.
+- **Extension Icon**: Updated the extension icon to a new design based on the Lucide `clipboard-copy` icon.
+- **Delete Button Style**: The individual delete (`×`) buttons have been made smaller (20x20px) and are now a lighter shade of gray for a more subtle appearance.
+- **Icon Colors**: The trash icon is now pink (`#ec4899`) and turns red (`#dc2626`) on hover.
+
+## [1.1.0] - 2025-11-20
+
+### Added
+- **Keyboard Shortcut**: Introduced a keyboard shortcut (**Ctrl+Shift+U** or **Cmd+Shift+U** on Mac) to toggle the URL selection mode. The shortcut can be customized in the browser's extension settings.
+- **Clear All Button**: Added a button to delete all collected URLs at once, with a confirmation dialog to prevent accidental data loss.
+
+### Changed
+- **Delete Button Design**: The individual delete buttons were updated from text to a circular `×` icon for a more modern and intuitive UI.
+
+## [1.0.2] - 2025-11-20
+
+### Fixed
+- **Duplicate URL Entry**: Fixed a critical bug where clicking a link would add the same URL to the list twice. This was caused by a redundant message forward in the background script, which has now been removed.
+
+## [1.0.1] - 2025-11-20
+
+### Fixed
+- **Side Panel Not Opening**: Fixed an issue where clicking the extension icon did not open the side panel. The logic was updated to use `chrome.sidePanel.setPanelBehavior({ openPanelOnActionClick: true })` for more reliable behavior.
+
+## [1.0.0] - 2025-11-20
+
+### Added
+- **Initial Release**: First version of the URL Collector extension.
+- **Core Functionality**: Selection mode for collecting links, side panel UI for viewing and editing URLs.
+- **Editing**: Ability to edit collected URLs directly in the side panel.
+- **Deletion**: Ability to delete individual URLs.
+- **Export**: Support for exporting the URL list to the clipboard, CSV, or JSON formats.
+- **Visual Feedback**: Hover and click effects on web pages during selection mode.
+- **Manifest V3**: Built on the modern and secure Manifest V3 platform.

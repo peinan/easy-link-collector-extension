@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>URL Collector テストページ</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 20px;
+      line-height: 1.6;
+    }
+    h1 {
+      color: #333;
+    }
+    .link-section {
+      margin: 30px 0;
+      padding: 20px;
+      background: #f5f5f5;
+      border-radius: 8px;
+    }
+    .link-section h2 {
+      margin-top: 0;
+      color: #4285F4;
+    }
+    a {
+      display: inline-block;
+      margin: 10px 10px 10px 0;
+      padding: 10px 15px;
+      background: #4285F4;
+      color: white;
+      text-decoration: none;
+      border-radius: 4px;
+      transition: background 0.2s;
+    }
+    a:hover {
+      background: #3367D6;
+    }
+    .nested-link {
+      display: inline-block;
+      margin: 10px 10px 10px 0;
+    }
+    .nested-link img {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 4px;
+    }
+    .text-links a {
+      background: transparent;
+      color: #4285F4;
+      padding: 0;
+      text-decoration: underline;
+    }
+    .text-links a:hover {
+      color: #3367D6;
+    }
+  </style>
+</head>
+<body>
+  <h1>URL Collector テストページ</h1>
+  <p>このページは URL Collector 拡張機能のテスト用です。</p>
+
+  <div class="link-section">
+    <h2>シンプルなリンク</h2>
+    <a href="https://www.google.com">Google</a>
+    <a href="https://www.github.com">GitHub</a>
+    <a href="https://www.stackoverflow.com">Stack Overflow</a>
+    <a href="https://www.wikipedia.org">Wikipedia</a>
+  </div>
+
+  <div class="link-section">
+    <h2>ネストされたリンク（画像を含む）</h2>
+    <a href="https://www.example.com/page1" class="nested-link">
+      <img src="https://via.placeholder.com/100/4285F4/FFFFFF?text=Link+1" alt="Link 1">
+    </a>
+    <a href="https://www.example.com/page2" class="nested-link">
+      <img src="https://via.placeholder.com/100/34A853/FFFFFF?text=Link+2" alt="Link 2">
+    </a>
+    <a href="https://www.example.com/page3" class="nested-link">
+      <img src="https://via.placeholder.com/100/FBBC04/FFFFFF?text=Link+3" alt="Link 3">
+    </a>
+  </div>
+
+  <div class="link-section">
+    <h2>テキスト内のリンク</h2>
+    <div class="text-links">
+      <p>
+        これは<a href="https://www.example.com/article1">記事1</a>へのリンクです。
+        また、<a href="https://www.example.com/article2">記事2</a>や
+        <a href="https://www.example.com/article3">記事3</a>もあります。
+      </p>
+    </div>
+  </div>
+
+  <div class="link-section">
+    <h2>重複URLのテスト</h2>
+    <a href="https://www.duplicate-test.com">重複リンク 1回目</a>
+    <a href="https://www.duplicate-test.com">重複リンク 2回目</a>
+    <a href="https://www.duplicate-test.com">重複リンク 3回目</a>
+  </div>
+
+  <div class="link-section">
+    <h2>リンクではない要素</h2>
+    <button style="padding: 10px 15px; margin: 10px 10px 10px 0;">ボタン（リンクなし）</button>
+    <div style="display: inline-block; padding: 10px 15px; background: #ccc; margin: 10px 10px 10px 0; border-radius: 4px;">
+      DIV要素（リンクなし）
+    </div>
+  </div>
+</body>
+</html>
