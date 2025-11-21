@@ -29,7 +29,7 @@
 
 **Chrome, Edge, BraveなどのChromiumベースのブラウザ向け:**
 
-1. **ダウンロード**: [最新リリース](https://github.com/peinan/easy-link-collector/releases)から`easy-link-collector-extension.zip`ファイルをダウンロードし、解凍します。
+1. **ダウンロード**: [最新リリース](https://github.com/peinan/easy-link-collector-extension/releases)から`easy-link-collector-extension.zip`ファイルをダウンロードし、解凍します。
 2. **拡張機能ページを開く**: `chrome://extensions`（または`edge://extensions`, `brave://extensions`）にアクセスします。
 3. **デベロッパーモードを有効化**: 右上隅にある「デベロッパーモード」のトグルをオンにします。
 4. **拡張機能を読み込む**: 「パッケージ化されていない拡張機能を読み込む」をクリックし、解凍した`easy-link-collector-extension`フォルダを選択します。
