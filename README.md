@@ -6,6 +6,7 @@
   <a href="./README.md">English</a> | <a href="./README-ja.md">日本語</a>
 </div>
 
+<br/>
 
 Tired of manually copying links one by one? Easy Link Collector is a browser extension that lets you easily collect links by simply clicking on elements displayed on web pages. Selected links are added to a side panel where you can edit them and export to clipboard, CSV, or JSON format.
 
@@ -28,7 +29,7 @@ Tired of manually copying links one by one? Easy Link Collector is a browser ext
 
 **For Chrome, Edge, Brave, and other Chromium-based browsers:**
 
-1. **Download**: Download the `easy-link-collector-extension.zip` file from the [latest release](https://github.com/your-repo/easy-link-collector/releases) and unzip it.
+1. **Download**: Download the `easy-link-collector-extension.zip` file from the [latest release](https://github.com/peinan/easy-link-collector/releases) and unzip it.
 2. **Open Extensions Page**: Navigate to `chrome://extensions` (or `edge://extensions`, `brave://extensions`).
 3. **Enable Developer Mode**: Turn on the "Developer mode" toggle in the top-right corner.
 4. **Load the Extension**: Click "Load unpacked" and select the unzipped `easy-link-collector-extension` folder.
