@@ -14,10 +14,58 @@ const exportClipboard = document.getElementById('exportClipboard');
 const exportCSV = document.getElementById('exportCSV');
 const exportJSON = document.getElementById('exportJSON');
 const notification = document.getElementById('notification');
+const addCurrentPageBtn = document.getElementById('addCurrentPageBtn');
+const addAllLinksBtn = document.getElementById('addAllLinksBtn');
 
 // Initialize
 updateURLList();
 updateCompleteButton();
+
+// Quick action buttons
+addCurrentPageBtn.addEventListener('click', async () => {
+  try {
+    const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
+    if (tab && tab.url) {
+      urlList.push(tab.url);
+      updateURLList();
+      showNotification('Current page URL added');
+    }
+  } catch (error) {
+    console.error('Failed to add current page URL:', error);
+    showNotification('Failed to add current page URL', 'error');
+  }
+});
+
+addAllLinksBtn.addEventListener('click', async () => {
+  try {
+    const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
+    
+    // Inject content script if not already injected
+    try {
+      await chrome.scripting.executeScript({
+        target: { tabId: tab.id },
+        files: ['content.js']
+      });
+    } catch (e) {
+      // Script might already be injected, continue
+    }
+    
+    // Request all links from the page
+    const response = await chrome.tabs.sendMessage(tab.id, { type: 'GET_ALL_LINKS' });
+    
+    if (response && response.links && response.links.length > 0) {
+      const addedCount = response.links.length;
+      urlList.push(...response.links);
+      updateURLList();
+      showNotification(`Added ${addedCount} links from the page`);
+    } else {
+      showNotification('No links found on the page', 'error');
+    }
+  } catch (error) {
+    console.error('Failed to add all links:', error);
+    showNotification('Failed to add all links', 'error');
+  }
+});
 
 // Mode toggle event
 modeToggle.addEventListener('change', async (e) => {

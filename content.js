@@ -256,6 +256,23 @@
     }
   }
   
+  // Get all links from the page
+  function getAllLinks() {
+    const links = [];
+    const anchors = document.querySelectorAll('a[href]');
+    
+    anchors.forEach(anchor => {
+      const href = anchor.href;
+      // Filter out javascript:, mailto:, tel:, etc.
+      if (href && (href.startsWith('http://') || href.startsWith('https://'))) {
+        links.push(href);
+      }
+    });
+    
+    // Remove duplicates
+    return [...new Set(links)];
+  }
+  
   // Listen for messages from side panel and background
   chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
     if (message.type === 'ENABLE_COLLECTION') {
@@ -276,6 +293,9 @@
         enabled: isCollectionMode
       });
       sendResponse({ success: true, enabled: isCollectionMode });
+    } else if (message.type === 'GET_ALL_LINKS') {
+      const links = getAllLinks();
+      sendResponse({ success: true, links: links });
     }
     return true;
   });

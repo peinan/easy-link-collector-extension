@@ -104,7 +104,42 @@
       padding: 16px;
       border-radius: 8px;
       margin-bottom: 16px;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+
+    .quick-actions {
+      display: flex;
+      gap: 16px;
+      padding: 12px 0 0 0;
+      border-top: 1px solid #eee;
+      margin-top: 12px;
+      flex-wrap: wrap;
+    }
+
+    .quick-action-btn {
+      background: transparent;
+      border: none;
+      color: #4285F4;
+      font-size: 13px;
+      cursor: pointer;
+      padding: 6px 0;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      transition: color 0.2s;
+    }
+
+    .quick-action-btn:hover {
+      color: #1a73e8;
+    }
+
+    .quick-action-btn:disabled {
+      color: #ccc;
+      cursor: not-allowed;
+    }
+
+    .quick-action-btn svg {
+      width: 16px;
+      height: 16px;
       max-height: 400px;
       overflow-y: auto;
     }
@@ -326,6 +361,25 @@
       <div class="empty-state">
         Turn on selection mode and click links on the page
       </div>
+    </div>
+
+    <div class="quick-actions">
+      <button class="quick-action-btn" id="addCurrentPageBtn" title="Add current page URL">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"/>
+          <line x1="12" x2="12" y1="8" y2="16"/>
+          <line x1="8" x2="16" y1="12" y2="12"/>
+        </svg>
+        Add Current Page
+      </button>
+      <button class="quick-action-btn" id="addAllLinksBtn" title="Add all links from current page">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"/>
+          <line x1="12" x2="12" y1="8" y2="16"/>
+          <line x1="8" x2="16" y1="12" y2="12"/>
+        </svg>
+        Add All Links
+      </button>
     </div>
   </div>
 
