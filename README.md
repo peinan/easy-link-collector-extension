@@ -43,6 +43,10 @@ The Easy Link Collector icon will appear in your browser's toolbar.
 
 For development setup, architecture details, debugging instructions, and contribution guidelines, see [DEVELOPMENT.md](./DEVELOPMENT.md).
 
+## Privacy Policy
+
+For information about how we collect, use, and protect your data, see our [Privacy Policy](./PRIVACY_POLICY.md).
+
 ## License
 
 This project is licensed under the [MIT License](./LICENSE).
