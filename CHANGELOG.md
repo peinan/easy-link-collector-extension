@@ -5,6 +5,21 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.3.1] - 2025-11-21
+
+### Fixed
+- **Export Options UI Improved**: The export options (Clipboard, CSV, JSON) are now presented as modern checkboxes with a custom checkmark animation, offering clearer states and improved accessibility.
+
+
+## [1.3.0] - 2025-11-21
+
+### Added
+
+- **Quick Actions Button Group**: Introduced a new button group below the URL list for convenient one-click actions. The buttons feature a clean, borderless design and are arranged horizontally for easy access.
+- **Add Current Page Button**: A new button that instantly adds the URL of the currently active page to the collection list. This allows users to quickly save the page they are on without needing to use selection mode.
+- **Add All Links Button**: A powerful new button that automatically collects all valid links (<a> tags with http or https protocols ) from the current page. The feature automatically filters out duplicates and notifies the user of the number of links added, streamlining bulk collection.
+
+
 ## [1.2.1] - 2025-11-21
 
 ### Fixed
