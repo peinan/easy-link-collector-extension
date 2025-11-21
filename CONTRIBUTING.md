@@ -32,8 +32,8 @@ We follow a standard fork-and-pull-request workflow:
 
 2. **Clone Your Fork**:
    ```bash
-   git clone https://github.com/your-username/url-collector.git
-   cd url-collector
+   git clone https://github.com/your-username/easy-link-collector.git
+   cd easy-link-collector
    ```
 
 3. **Create a Feature Branch**:
@@ -87,4 +87,4 @@ Before submitting a pull request:
 
 If you have any questions about contributing, feel free to open an issue or reach out to the maintainers.
 
-Thank you for helping make URL Collector better!
+Thank you for helping make Easy Link Collector better!
