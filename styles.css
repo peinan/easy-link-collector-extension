@@ -66,6 +66,10 @@ h1, h2 {
   margin-bottom: var(--spacing-md);
 }
 
+.url-list-container {
+  box-shadow: var(--shadow-sm);
+}
+
 .url-list-container h2,
 .export-section h2 {
   font-size: 14px;
@@ -161,6 +165,7 @@ input:checked + .slider:before {
 
 .quick-action-btn:hover {
   color: var(--color-primary-light);
+  opacity: 0.8;
 }
 
 .quick-action-btn:disabled {
