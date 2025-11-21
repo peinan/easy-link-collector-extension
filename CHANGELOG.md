@@ -5,6 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.3.2] - 2025-11-21
+
+### Refactored
+- **Code Organization**: Separated CSS into `styles.css` and split JavaScript into modular files (`urlManager.js`, `exportManager.js`, `uiManager.js`, `notificationManager.js`) for better maintainability.
+- **CSS Consolidation**: Unified common styles using CSS variables and consolidated container styles, heading styles, and shared values to reduce duplication.
+
+### Changed
+- **Export Button Text**: The "Complete" button text has been updated to "Export" to match the other buttons in the UI.
+- **UI Improvements**: Removed the top border from the export section to improve the visual hierarchy and reduce visual clutter.
+
 ## [1.3.1] - 2025-11-21
 
 ### Fixed

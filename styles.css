@@ -1,0 +1,419 @@
+/* CSS Variables */
+:root {
+  --color-primary: #4285F4;
+  --color-primary-hover: #3367D6;
+  --color-primary-light: #1a73e8;
+  --color-success: #4CAF50;
+  --color-error: #f44336;
+  --color-danger: #ec4899;
+  --color-danger-hover: #dc2626;
+  --color-text: #333;
+  --color-text-secondary: #666;
+  --color-text-muted: #999;
+  --color-border: #ddd;
+  --color-border-light: #eee;
+  --color-background: #f5f5f5;
+  --color-white: white;
+  --color-disabled: #ccc;
+  --border-radius-sm: 4px;
+  --border-radius-md: 8px;
+  --border-radius-lg: 26px;
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 12px;
+  --spacing-lg: 16px;
+  --spacing-xl: 32px;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.1);
+  --shadow-md: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  padding: var(--spacing-lg);
+  background-color: var(--color-background);
+  min-height: 100vh;
+}
+
+/* Common container styles */
+.container,
+.header,
+.url-list-container,
+.export-section {
+  background: var(--color-white);
+  padding: var(--spacing-lg);
+  border-radius: var(--border-radius-md);
+  margin-bottom: var(--spacing-lg);
+}
+
+.header,
+.export-section {
+  box-shadow: var(--shadow-sm);
+}
+
+/* Common heading styles */
+h1, h2 {
+  color: var(--color-text);
+}
+
+.header h1 {
+  font-size: 18px;
+  margin-bottom: var(--spacing-md);
+}
+
+.url-list-container h2,
+.export-section h2 {
+  font-size: 14px;
+}
+
+.mode-toggle {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
+.toggle-button {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 26px;
+}
+
+.toggle-button input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--color-disabled);
+  transition: .4s;
+  border-radius: var(--border-radius-lg);
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: var(--spacing-xs);
+  bottom: var(--spacing-xs);
+  background-color: var(--color-white);
+  transition: .4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: var(--color-primary);
+}
+
+input:checked + .slider:before {
+  transform: translateX(24px);
+}
+
+.mode-status {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+}
+
+.mode-status.active {
+  color: var(--color-primary);
+}
+
+.shortcut-hint {
+  font-size: 11px;
+  color: var(--color-text-muted);
+  margin-top: var(--spacing-xs);
+}
+
+.quick-actions {
+  display: flex;
+  gap: var(--spacing-lg);
+  padding: var(--spacing-md) 0 0 0;
+  margin-top: var(--spacing-md);
+  flex-wrap: wrap;
+}
+
+.quick-action-btn {
+  background: transparent;
+  border: none;
+  color: var(--color-primary);
+  font-size: 13px;
+  cursor: pointer;
+  padding: 6px 0;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  transition: color 0.2s;
+}
+
+.quick-action-btn:hover {
+  color: var(--color-primary-light);
+}
+
+.quick-action-btn:disabled {
+  color: var(--color-disabled);
+  cursor: not-allowed;
+}
+
+.quick-action-btn svg {
+  width: 16px;
+  height: 16px;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.url-list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-md);
+}
+
+.clear-all-btn {
+  background: transparent;
+  color: var(--color-danger);
+  border: none;
+  padding: var(--spacing-xs);
+  cursor: pointer;
+  transition: color 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.clear-all-btn:hover {
+  color: var(--color-danger-hover);
+}
+
+.clear-all-btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+  color: var(--color-disabled);
+}
+
+.clear-all-btn:disabled:hover {
+  color: var(--color-disabled);
+}
+
+.clear-all-btn svg {
+  width: 18px;
+  height: 18px;
+}
+
+.url-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.url-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-sm);
+}
+
+.url-item textarea {
+  flex: 1;
+  padding: var(--spacing-sm) var(--spacing-md);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-sm);
+  font-size: 13px;
+  font-family: monospace;
+  resize: none;
+  overflow: hidden;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  min-height: 36px;
+  line-height: 1.4;
+}
+
+.url-item textarea:focus {
+  outline: none;
+  border-color: var(--color-primary);
+}
+
+.url-item .delete-btn {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #d0d0d0;
+  color: var(--color-white);
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+  flex-shrink: 0;
+}
+
+.url-item .delete-btn:hover {
+  background: #b0b0b0;
+}
+
+.empty-state {
+  text-align: center;
+  padding: var(--spacing-xl) var(--spacing-lg);
+  color: var(--color-text-muted);
+  font-size: 14px;
+}
+
+.export-section-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: var(--spacing-md);
+}
+
+.export-options {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-lg);
+}
+
+.export-option {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.checkbox-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.checkbox-wrapper input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.checkbox-label {
+  width: 16px;
+  height: 16px;
+  border: 1px solid #cbd5e1;
+  border-radius: var(--border-radius-sm);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-white);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  flex-shrink: 0;
+}
+
+.checkbox-wrapper input[type="checkbox"]:checked + .checkbox-label {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.checkbox-wrapper input[type="checkbox"]:focus-visible + .checkbox-label {
+  outline: 2px solid rgba(66, 133, 244, 0.4);
+  outline-offset: 2px;
+}
+
+.checkbox-wrapper input[type="checkbox"]:hover + .checkbox-label {
+  border-color: #94a3b8;
+}
+
+.checkbox-wrapper input[type="checkbox"]:checked:hover + .checkbox-label {
+  background-color: var(--color-primary-hover);
+  border-color: var(--color-primary-hover);
+}
+
+.checkbox-checkmark {
+  width: 14px;
+  height: 14px;
+  opacity: 0;
+  color: var(--color-white);
+  pointer-events: none;
+  transition: opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.checkbox-wrapper input[type="checkbox"]:checked + .checkbox-label .checkbox-checkmark {
+  opacity: 1;
+  animation: check-scale 0.2s cubic-bezier(0.18, 0.89, 0.32, 1.28) forwards;
+}
+
+@keyframes check-scale {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.export-option-label {
+  font-size: 14px;
+  color: var(--color-text);
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.export-option-label:hover {
+  color: #1a1a1a;
+}
+
+.export-button {
+  width: 100%;
+  padding: var(--spacing-md);
+  background: var(--color-primary);
+  color: var(--color-white);
+  border: none;
+  border-radius: var(--border-radius-sm);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.export-button:hover {
+  background: var(--color-primary-hover);
+}
+
+.export-button:disabled {
+  background: var(--color-disabled);
+  cursor: not-allowed;
+}
+
+.notification {
+  position: fixed;
+  top: var(--spacing-lg);
+  right: var(--spacing-lg);
+  background: var(--color-success);
+  color: var(--color-white);
+  padding: var(--spacing-md) 20px;
+  border-radius: var(--border-radius-sm);
+  box-shadow: var(--shadow-md);
+  opacity: 0;
+  transition: opacity 0.3s;
+  pointer-events: none;
+  z-index: 1000;
+}
+
+.notification.show {
+  opacity: 1;
+}
+

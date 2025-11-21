@@ -18,7 +18,7 @@ While browsing, you often need to gather a list of links from a page—for resea
 - **✨ Visual Feedback**: Elements are highlighted on hover, and a subtle animation confirms a successful click.
 - **📝 In-Panel Editing**: Edit or delete collected URLs directly within the side panel.
 - **🔗 Smart Link Detection**: Automatically finds the correct link, even if you click on nested elements like images or text inside an `<a>` tag.
-- **📋 Multiple Export Options**: 
+- **📋 Multiple Export Options**:
   - Copy to Clipboard (newline-separated)
   - Download as CSV
   - Download as JSON
@@ -45,17 +45,17 @@ That's it! The URL Collector icon will appear in your browser's toolbar.
 
 1.  **Open the Side Panel**: Click the URL Collector icon in your browser toolbar to open the side panel.
 2.  **Start Selection Mode**: In the side panel, click the toggle switch or use the keyboard shortcut (**Ctrl+Shift+U** / **Cmd+Shift+U**) to enable selection mode. The page cursor will change to a crosshair.
-3.  **Collect URLs**: 
+3.  **Collect URLs**:
     - Hover over any link on the page. It will be highlighted with a blue border.
     - Click the link. A flash animation will confirm the click, and the URL will be added to the list in the side panel.
-4.  **Edit and Manage**: 
+4.  **Edit and Manage**:
     - The collected URLs are displayed in `textarea` fields, which automatically wrap and resize.
     - You can edit any URL by simply typing in its text area.
     - Click the `×` button next to a URL to delete it individually.
     - Click the trash can icon at the top to delete all collected URLs at once.
-5.  **Export Data**: 
+5.  **Export Data**:
     - At the bottom of the side panel, check the boxes for your desired export formats (Clipboard, CSV, JSON).
-    - Click the "Complete" button. The button is disabled if no export format is selected.
+    - Click the "Export" button. The button is disabled if no export format is selected.
 6.  **Stop Selection Mode**: Click the toggle switch again or use the shortcut to turn off selection mode and return to normal browsing.
 
 ## Development Guide
