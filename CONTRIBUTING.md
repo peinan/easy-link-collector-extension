@@ -1,6 +1,6 @@
-# Contributing to URL Collector
+# Contributing to Easy Link Collector
 
-Thank you for considering contributing to URL Collector! We welcome contributions from everyone, whether it's a bug report, feature request, documentation improvement, or code contribution.
+Thank you for considering contributing to Easy Link Collector! We welcome contributions from everyone, whether it's a bug report, feature request, documentation improvement, or code contribution.
 
 ## How to Contribute
 

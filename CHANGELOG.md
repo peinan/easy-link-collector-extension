@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 - **New Icon**: Updated the extension icon to a new design.
+- **Extension Name**: Updated the extension name to "Easy Link Collector".
 
 ### Fixed
 - **UI Improvements**: Minor UI improvements for the URL list container.
