@@ -1,0 +1,88 @@
+name: Create Release
+
+on:
+  push:
+    tags:
+      - '[0-9]+.[0-9]+.[0-9]+'
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Extract version from tag
+        id: version
+        run: |
+          VERSION=${GITHUB_REF#refs/tags/}
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+          echo "Extracted version: $VERSION"
+
+      - name: Extract release notes from CHANGELOG
+        id: changelog
+        run: |
+          VERSION="${{ steps.version.outputs.version }}"
+          # CHANGELOG.mdから該当バージョンのセクションを抽出
+          # awkを使用して該当セクションを抽出（次のバージョンセクションまで）
+          awk -v version="$VERSION" '
+            BEGIN { in_section=0 }
+            /^## \[/ {
+              if (in_section) exit
+              if ($0 ~ "\\[" version "\\]") {
+                in_section=1
+              }
+            }
+            in_section { print }
+          ' CHANGELOG.md > release_notes.txt
+
+          # リリースノートが空でないか確認
+          if [ ! -s release_notes.txt ]; then
+            echo "Warning: No release notes found for version $VERSION"
+            echo "notes<<EOF" >> $GITHUB_OUTPUT
+            echo "## Release $VERSION" >> $GITHUB_OUTPUT
+            echo "EOF" >> $GITHUB_OUTPUT
+          else
+            # リリースノートをマルチライン出力として設定
+            echo "notes<<EOF" >> $GITHUB_OUTPUT
+            cat release_notes.txt >> $GITHUB_OUTPUT
+            echo "EOF" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Create extension zip
+        id: create_extension_zip
+        run: |
+          VERSION="${{ steps.version.outputs.version }}"
+          ZIP_NAME="easy-link-collector-extension-${VERSION}.zip"
+
+          # 除外ファイル/フォルダを指定してzipを作成
+          zip -r "$ZIP_NAME" . \
+            -x ".git/*" \
+            -x ".github/*" \
+            -x "node_modules/*" \
+            -x "assets/*" \
+            -x "README.md" \
+            -x "README-ja.md" \
+            -x "DEVELOPMENT.md" \
+            -x "CONTRIBUTING.md" \
+            -x "*.zip" \
+            -x ".DS_Store"
+
+          echo "zip_name=$ZIP_NAME" >> $GITHUB_OUTPUT
+          ls -lh "$ZIP_NAME"
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: ${{ steps.version.outputs.version }}
+          name: Release ${{ steps.version.outputs.version }}
+          body: ${{ steps.changelog.outputs.notes }}
+          files: ${{ steps.create_extension_zip.outputs.zip_name }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
