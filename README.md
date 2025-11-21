@@ -19,7 +19,7 @@ Tired of manually copying links one by one? Easy Link Collector is a browser ext
 3. **Edit and Export**: Edit URLs directly in the side panel, delete individual items with the `×` button, or clear all with the trash icon. Select export formats (Clipboard, CSV, JSON) and click "Export".
 4. **Stop Selection Mode**: Toggle the switch again or use the keyboard shortcut to return to normal browsing.
 
-> [!CAUTION]
+> [!WARNING]
 > Please note that collected links will be discarded when you close the side panel.
 
 ## Installation
@@ -36,7 +36,7 @@ Tired of manually copying links one by one? Easy Link Collector is a browser ext
 
 The Easy Link Collector icon will appear in your browser's toolbar.
 
-> [!CAUTION]
+> [!WARNING]
 > Arc browser has a conflicting side panel feature that prevents this extension from working properly. We recommend using Chrome instead.
 
 ## Development & Contributing
