@@ -1,5 +1,14 @@
 ![Header Image](./assets/header-image.png)
 
+<div align="center" style="display: flex; justify-content: center; gap: 8px;">
+  <a href="https://chromewebstore.google.com/detail/easy-link-collector/dlpjoiieabfmpdpbcfmpooafcepokmmj" target="_blank" rel="noopener noreferrer">
+    <img src="https://img.shields.io/badge/Chrome%20Web%20Store-Available-4285F4?logo=chromewebstore" alt="Chrome Web Store Badge" />
+    <img src="https://img.shields.io/chrome-web-store/users/dlpjoiieabfmpdpbcfmpooafcepokmmj.svg" alt="Chrome Web Store Users" />
+    <img src="https://img.shields.io/chrome-web-store/rating/dlpjoiieabfmpdpbcfmpooafcepokmmj.svg" alt="Chrome Web Store Rating" />
+    <img src="https://img.shields.io/chrome-web-store/rating-count/dlpjoiieabfmpdpbcfmpooafcepokmmj.svg" alt="Chrome Web Store Rating Count" />
+  </a>
+</div>
+
 ---
 
 <div align="center">
@@ -24,8 +33,11 @@
 
 ## インストール方法
 
-> [!NOTE]
-> 2025/11/21時点で、この拡張機能はまだChromeウェブストアで公開されていないため、デベロッパーモードを使用して手動でインストールする必要があります。公開され次第インストール方法を更新します。
+### Chrome ウェブストアからインストール
+
+[Chrome ウェブストアページ](https://chromewebstore.google.com/detail/easy-link-collector/dlpjoiieabfmpdpbcfmpooafcepokmmj)からインストールします。
+
+### 手動インストール
 
 **Chrome, Edge, BraveなどのChromiumベースのブラウザ向け:**
 
@@ -41,7 +53,7 @@
 
 ## 開発・コントリビューション
 
-開発環境のセットアップ、アーキテクチャの詳細、デバッグ方法やコントリビューション手順については、[DEVELOPMENT.md](./DEVELOPMENT.md)を参照してください。
+開発環境のセットアップ、アーキテクチャの詳細、デバッグ方法やコントリビューション手順については、[DEVELOPMENT.md](./DEVELOPMENT.md) を参照してください。
 
 ## プライバシーポリシー
 
@@ -49,4 +61,4 @@
 
 ## ライセンス
 
-このプロジェクトは[MITライセンス](./LICENSE)の下で公開されています。
+このプロジェクトは [MIT ライセンス](./LICENSE)の下で公開されています。

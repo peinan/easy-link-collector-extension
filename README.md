@@ -1,5 +1,14 @@
 ![Header Image](./assets/header-image.png)
 
+<div align="center" style="display: flex; justify-content: center; gap: 8px;">
+  <a href="https://chromewebstore.google.com/detail/easy-link-collector/dlpjoiieabfmpdpbcfmpooafcepokmmj" target="_blank" rel="noopener noreferrer">
+    <img src="https://img.shields.io/badge/Chrome%20Web%20Store-Available-4285F4?logo=chromewebstore" alt="Chrome Web Store Badge" />
+    <img src="https://img.shields.io/chrome-web-store/users/dlpjoiieabfmpdpbcfmpooafcepokmmj.svg" alt="Chrome Web Store Users" />
+    <img src="https://img.shields.io/chrome-web-store/rating/dlpjoiieabfmpdpbcfmpooafcepokmmj.svg" alt="Chrome Web Store Rating" />
+    <img src="https://img.shields.io/chrome-web-store/rating-count/dlpjoiieabfmpdpbcfmpooafcepokmmj.svg" alt="Chrome Web Store Rating Count" />
+  </a>
+</div>
+
 ---
 
 <div align="center">
@@ -24,8 +33,11 @@ Tired of manually copying links one by one? Easy Link Collector is a browser ext
 
 ## Installation
 
-> [!NOTE]
-> As of 2025/11/21, this extension is not yet available on the Chrome Web Store, so you need to install it manually using Developer Mode. We will update the installation instructions once it becomes available.
+### Install from Chrome Web Store
+
+Install from the [Chrome Web Store page](https://chromewebstore.google.com/detail/easy-link-collector/dlpjoiieabfmpdpbcfmpooafcepokmmj).
+
+### Manual Installation
 
 **For Chrome, Edge, Brave, and other Chromium-based browsers:**
 
